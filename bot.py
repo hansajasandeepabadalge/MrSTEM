@@ -11,36 +11,25 @@ app = Client(
     bot_token=bot_token
 )
 
-@app.on_message(filters.text & filters.private)
-async def welcome(client, message):
-    user_id = message.from_user.id
-    if message.text.lower() == "hi":
-        buttons = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("Button 1", callback_data="button1")],
-                [InlineKeyboardButton("Button 2", callback_data="button2")]
-            ]
-        )
-        await message.reply("Welcome! How can I assist you today?", reply_markup=buttons)
-    else:
-        await message.reply(f"{message.text} (User ID: {user_id})")
+from pyrogram import Client, filters
+from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-@app.on_callback_query()
-async def handle_callback_query(client, callback_query):
-    data = callback_query.data
-    if data == "button1":
-        await callback_query.message.edit_text("You pressed Button 1")
-    elif data == "button2":
-        await callback_query.message.edit_text("You pressed Button 2")
+@app.on_message(filters.command("start"))
+def start(client, message):
+    # Define the keyboard layout with more buttons
+    keyboard = ReplyKeyboardMarkup(
+        [
+            [KeyboardButton("Papers"), KeyboardButton("Notes")],
+            [KeyboardButton("Resources Books"), KeyboardButton("Teachers' Guide")],
+            [KeyboardButton("About Us")]
+        ],
+        resize_keyboard=True  # Optional: make the keyboard smaller
+    )
+    
+    # Send the welcome message with the keyboard
+    message.reply_text(
+        "Welcome! 🎓 I'm here to help with your advanced studies.",
+        reply_markup=keyboard
+    )
 
-async def send_direct_message():
-    target_user_id = 6131532789
-    await app.send_message(target_user_id, "Hello! This is a direct message.")
-
-async def main():
-    await app.start()
-    await send_direct_message()
-    await idle()
-    await app.stop()
-
-app.run(main())
+app.run()
