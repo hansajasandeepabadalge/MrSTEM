@@ -49,20 +49,6 @@ def handle_text(client, message):
             reply_markup=papers_keyboard
         )
     elif message.text == "Back":
-        # Define the initial keyboard layout with more buttons
-        main_keyboard = ReplyKeyboardMarkup(
-            [
-                [KeyboardButton("Papers"), KeyboardButton("Notes")],
-                [KeyboardButton("Resources Books"), KeyboardButton("Teachers' Guide")],
-                [KeyboardButton("About Us")]
-            ],
-            resize_keyboard=True  # Optional: make the keyboard smaller
-        )
-        
-        # Send the welcome message with the keyboard
-        message.reply_text(
-            "Welcome back to the main menu! 🎓 I'm here to help with your advanced studies.",
-            reply_markup=main_keyboard
-        )
+        start(client, message)
 
 app.run()
