@@ -31,3 +31,25 @@ notes = ReplyKeyboardMarkup(
             ],
             resize_keyboard=True
         )
+
+resources_books = ReplyKeyboardMarkup(
+            [
+                [KeyboardButton("📚 Physics")],
+                [KeyboardButton("📚 Biology"), KeyboardButton("📚 Mathematics")],
+                [KeyboardButton("📚 ICT"),  KeyboardButton("📚 Chemistry")],
+                [KeyboardButton("📚 Agrricultural Science")],
+                [KeyboardButton("🏠 Main Menu")]
+            ],
+            resize_keyboard=True
+        )
+
+teachers_guide = ReplyKeyboardMarkup(
+            [
+                [KeyboardButton("👩‍🏫 Physics")],
+                [KeyboardButton("👩‍🏫 Biology"), KeyboardButton("👩‍🏫 Mathematics")],
+                [KeyboardButton("👩‍🏫 ICT"),  KeyboardButton("👩‍🏫 Chemistry")],
+                [KeyboardButton("👩‍🏫 Agrricultural Science")],
+                [KeyboardButton("🏠 Main Menu")]
+            ],
+            resize_keyboard=True
+        )

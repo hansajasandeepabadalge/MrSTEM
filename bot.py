@@ -23,23 +23,23 @@ def start(client, message):
 def handle_text(client, message):
     if message.text == "📄 Papers":
         message.reply_text(
-            "Please select a subject:",
+            "Select a subject:",
             reply_markup = keyboards.papers
         )
     elif message.text == "📒 Notes":
         message.reply_text(
-            "Please select a subject:",
+            "Select a subject:",
             reply_markup = keyboards.notes
         )
-    elif message.text == "Resources Books":
+    elif message.text == "📚 Resources Books":
         message.reply_text(
-            "Please select a subject:",
-            reply_markup = keyboards.resources
+            "Select a subject:",
+            reply_markup = keyboards.resources_books
         )
-    elif message.text == "Teachers' Guide":
+    elif message.text == "👩‍🏫 Teachers' Guide":
         message.reply_text(
-            "Please select a subject:",
-            reply_markup = keyboards.teachers
+            "Select a subject:",
+            reply_markup = keyboards.teachers_guide
         )
     elif message.text == "🏠 Main Menu":
         start(client, message)
