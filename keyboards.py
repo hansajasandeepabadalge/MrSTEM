@@ -2,29 +2,32 @@ from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 welcome = ReplyKeyboardMarkup(
         [
-            [KeyboardButton("Papers"), KeyboardButton("Notes")],
-            [KeyboardButton("Resources Books"), KeyboardButton("Teachers' Guide")],
-            [KeyboardButton("About Us")]
+            [KeyboardButton("📄 Papers"), KeyboardButton("📒 Notes")],
+            [KeyboardButton("📚 Resources Books")],
+            [KeyboardButton("👩‍🏫 Teachers' Guide")],
+            [KeyboardButton("🖐 About Us"), KeyboardButton("🌟 Rate Us")]
         ],
-        resize_keyboard=True  # Optional: make the keyboard smaller
+        resize_keyboard=True
     )
 
 papers = ReplyKeyboardMarkup(
             [
-                [KeyboardButton("Physics"), KeyboardButton("Mathematics")],
-                [KeyboardButton("Biology"), KeyboardButton("Chemistry")],
-                [KeyboardButton("ICT"), KeyboardButton("Agrricultural Science")],
-                [KeyboardButton("Back")]
+                [KeyboardButton("📄 Physics")],
+                [KeyboardButton("📄 Mathematics"), KeyboardButton("📄 Biology")],
+                [KeyboardButton("📄 ICT"), KeyboardButton("📄 Chemistry")],
+                [KeyboardButton("📄 Agrricultural Science")],
+                [KeyboardButton("🏠 Main Menu")]
             ],
-            resize_keyboard=True  # Optional: make the keyboard smaller
+            resize_keyboard=True
         )
 
 notes = ReplyKeyboardMarkup(
             [
-                [KeyboardButton("Physics"), KeyboardButton("Mathematics")],
-                [KeyboardButton("Biology"), KeyboardButton("Chemistry")],
-                [KeyboardButton("ICT"), KeyboardButton("Agrricultural Science")],
-                [KeyboardButton("Back")]
+                [KeyboardButton("📕 Physics")],
+                [KeyboardButton("📗 Biology"), KeyboardButton("📘 Mathematics")],
+                [KeyboardButton("📙 ICT"),  KeyboardButton("📓 Chemistry")],
+                [KeyboardButton("📒 Agrricultural Science")],
+                [KeyboardButton("🏠 Main Menu")]
             ],
             resize_keyboard=True
         )
