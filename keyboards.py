@@ -1,4 +1,4 @@
-from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
+from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup,InlineKeyboardButton
 
 welcome = ReplyKeyboardMarkup(
         [
@@ -17,6 +17,16 @@ papers = ReplyKeyboardMarkup(
                 [KeyboardButton("📄 ICT"), KeyboardButton("📄 Chemistry")],
                 [KeyboardButton("📄 Agrricultural Science")],
                 [KeyboardButton("🏠 Main Menu")]
+            ],
+            resize_keyboard=True
+        )
+
+papers_type = ReplyKeyboardMarkup(
+            [
+                [KeyboardButton("Past Papers"), KeyboardButton("Model Papers")],
+                [KeyboardButton("Province Papers"), KeyboardButton("Zonal Papers")],
+                [KeyboardButton("School Papers"), KeyboardButton("Seminar Papers")],
+                [KeyboardButton("👈 Back"), KeyboardButton("🏠 Main Menu")]
             ],
             resize_keyboard=True
         )
@@ -53,3 +63,16 @@ teachers_guide = ReplyKeyboardMarkup(
             ],
             resize_keyboard=True
         )
+years_keyboard = InlineKeyboardMarkup(
+    [
+        [InlineKeyboardButton("2023", callback_data="year_2022")],
+        [
+            InlineKeyboardButton("2022", callback_data="year_2022"),
+            InlineKeyboardButton("2021", callback_data="year_2021"),
+            InlineKeyboardButton("2020", callback_data="year_2020"),
+            InlineKeyboardButton("2019", callback_data="year_2019"),
+            InlineKeyboardButton("2018", callback_data="year_2018"),
+            InlineKeyboardButton("2005", callback_data="year_2005")
+        ]
+    ]
+)
