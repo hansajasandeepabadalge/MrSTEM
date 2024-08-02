@@ -1,18 +1,13 @@
-import yaml
 from pyrogram import Client, filters, idle
 from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
 import keyboards
 
-# Load configuration from config.yaml
-with open("config.yaml", "r") as file:
-    config = yaml.safe_load(file)
-
-api_id = config['api']['id']
-api_hash = config['api']['hash']
-bot_token = config['api']['bot_token']
+api_id = 11965840
+api_hash = "716c845bdc09adf2b6db0b63e4a455"
+bot_token = "6998765478:AAF-bWsygAmJQpUKSCgINRhs7wOAeYG9fiQ"
 
 app = Client(
-    config['bot']['name'],
+    "my_bot",
     api_id=api_id, api_hash=api_hash,
     bot_token=bot_token
 )
@@ -25,7 +20,7 @@ def start(client, message):
     user_states[user_id] = "home_menu"
     print(user_states)
     message.reply_text(
-        config['messages']['welcome'],
+        "Welcome! 🎓 I'm here to help with your advanced studies.",
         reply_markup = keyboards.welcome
     )
 
@@ -39,7 +34,7 @@ def handle_text(client, message):
             user_states[user_id] = "papers_menu"
             print(user_states)
             message.reply_text(
-                config['messages']['papers_prompt'],
+                "Select a subject:",
                 reply_markup = keyboards.papers
             )
     elif user_state == "papers_menu":
